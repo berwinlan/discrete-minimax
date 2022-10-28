@@ -1,4 +1,4 @@
-import minimax, abpruning, boardhelpers, play
+import minimax, abpruning, boardhelpers, play, time
 
 def main():
 
@@ -23,7 +23,10 @@ def main():
         board, over = play.player_turn(board)
 
         boardhelpers.draw_board(board)
+        start = time.time()
         board, over = gametype(board)
+        end = time.time()
+        print(f"Evaluation time: {round(end - start, 6)} sec.")
     
     boardhelpers.draw_board(board)
     print("Game over")
