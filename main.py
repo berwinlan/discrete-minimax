@@ -21,6 +21,9 @@ def main():
         
         boardhelpers.draw_board(board)
         board, over = play.player_turn(board)
+        
+        if over:
+            break
 
         boardhelpers.draw_board(board)
         start = time.time()
